@@ -1,13 +1,17 @@
 import { useState } from "react";
 
-function ListGroup() {
-    let items = ["list item 1", "list item 2"];
+interface Props {
+    items: string[];
+    heading: string;
+}
+
+function ListGroup({items, heading}: Props) {
     
     const [selectedIndex, setSelectedIndex] = useState(-1);
 
     return (
         <>
-            <h1>List Group</h1>
+            <h1>{heading}</h1>
             {/* use and logic instead of ternary operator for conciseness*/}
             {items.length === 0 && <p>No item found</p>}
             <ul className="list-group">
